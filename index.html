@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Management Cleanup</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<h1>Memory Management Cleanup Simulation</h1>
+<div id="webPages">
+  <div id="homePage" class="page">
+    Home Page
+    <div id="aboutPage" class="page">
+      About Page
+      <div id="image2" class="resource">Image 2</div>
+      <div id="script1" class="resource">Script 1</div>
+    </div>
+    <div id="contactPage" class="page">
+      Contact Page
+      <div id="style1" class="resource">Style 1</div>
+    </div>
+  </div>
+</div>
+<p >The logic ensures that child nodes are removed before their parent nodes, mimicking post-order traversal's bottom-up approach in memory cleanup.</p>
+<ul class="explanation">
+  <li>Leaf Nodes First: Leaf nodes (nodes without children) are processed before their parent nodes. This is evident in the code's structure, where leaf nodes (image2, script1, style1) are removed before their parent nodes (aboutPage, contactPage, homePage).</li>
+  <li>Child Nodes Next: After removing leaf nodes, child nodes are processed next. In the provided code, child nodes (aboutPage, contactPage) are removed after all leaf nodes are removed.</li>
+  <li>Parent Node Last: Finally, the parent node (homePage) is removed last, after all child nodes have been processed.</li>
+</ul>
+<ul>
+  <li>Memory Management Cleanup, Post-Order Traversal: Post-order traversal is indirectly employed to ensure that child nodes (resources and child pages) are cleaned up before their parent nodes (main web page).</li>
+  <li>
+    <strong>Order of Removal:</strong>
+    <ul>
+      <li>The leaf nodes (resources) are removed first. This aligns with the concept of post-order traversal where leaf nodes are visited before their parent nodes.</li>
+      <li>Next, the child nodes (web pages) are removed after all leaf nodes are removed.</li>
+      <li>Finally, the parent node (main web page) is removed after all child nodes are removed.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Bottom-Up Approach:</strong>
+    <ul>
+      <li>Post-order traversal follows a bottom-up approach, where the processing of child nodes precedes the processing of their parent nodes. This aligns with the memory cleanup process, where resources and child pages are cleaned up before their parent page.</li>
+    </ul>
+  </li>
+</ul>
+<div id="visualization">
+  <h2>Visualization of Memory Cleanup</h2>
+  <pre>
+       Home Page
+         /     \
+    About Page    Contact Page
+      /   \           \
+  Image 2  Script 1    Style 1
+  </pre>
+</div>
+
+<!-- Removal Process -->
+<div id="removalProcess">
+  <h2>Removal Process</h2>
+  <h3>Leaf Nodes (Image 2, Script 1, Style 1):</h3>
+  <ul>
+    <li>Image 2 is removed first.</li>
+    <li>Script 1 is removed next.</li>
+    <li>Style 1 is removed last.</li>
+  </ul>
+  <h3>Child Nodes (About Page, Contact Page):</h3>
+  <ul>
+    <li>About Page is removed first.</li>
+    <li>Contact Page is removed next.</li>
+  </ul>
+  <h3>Parent Node (Home Page):</h3>
+  <p>Home Page is removed last.</p>
+</div>
+</li>
+  <li>
+    <strong>Role of Post-order Traversal:</strong>
+    <ul>
+      <li>Post-order traversal is a depth-first traversal technique where the nodes are visited in the following order: left subtree, right subtree, and then the current node.</li>
+      <li>In the context of memory cleanup, post-order traversal ensures that child nodes (resources, child web pages) are removed before their parent nodes. This mimics a bottom-up approach where resources and child pages are cleaned up before their parent page.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Goal of Post-order Traversal:</strong>
+    <ul>
+      <li>The goal of using post-order traversal in memory cleanup is to ensure that memory associated with leaf nodes (resources) and child nodes (web pages) is freed before cleaning up the memory of their parent nodes.</li>
+      <li>By following post-order traversal, we prevent memory leaks and ensure efficient memory usage by releasing resources in a systematic manner.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Execution in Provided Code:</strong>
+    <ul>
+      <li>The leaf nodes (resources) are removed first in a post-order traversal manner with a delay of 2 seconds between each removal.</li>
+      <li>Next, the child nodes (web pages) are removed after all leaf nodes are removed.</li>
+      <li>Finally, the parent node (main web page) is removed after all child nodes are removed.</li>
+    </ul>
+  </li>
+</ul>
+<footer>
+  <p>&copy; 2024 @sudheer debbati. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
